@@ -5,6 +5,14 @@ import Button from "../Button";
 import "./styles.css";
 
 export default class Calculator extends Component {
+  constructor(props: any) {
+    super(props);
+    this.addDigit = this.addDigit.bind(this);
+  }
+
+  addDigit(digit: String) {
+    console.log(digit);
+  }
 
   render() {
     return (
@@ -17,23 +25,23 @@ export default class Calculator extends Component {
         <Button label="%" />
         <Button label="÷" operation />
 
-        <Button label="7" />
-        <Button label="8" />
-        <Button label="9" />
+        <Button label="7" click={this.addDigit} />
+        <Button label="8" click={this.addDigit} />
+        <Button label="9" click={this.addDigit} />
         <Button label="x" operation />
 
-        <Button label="4" />
-        <Button label="5" />
-        <Button label="6" />
+        <Button label="4" click={this.addDigit} />
+        <Button label="5" click={this.addDigit} />
+        <Button label="6" click={this.addDigit} />
         <Button label="-" operation />
 
-        <Button label="1" />
-        <Button label="2" />
-        <Button label="3" />
+        <Button label="1" click={this.addDigit} />
+        <Button label="2" click={this.addDigit} />
+        <Button label="3" click={this.addDigit} />
         <Button label="+" operation />
 
-        <Button label="0" double />
-        <Button label="." />
+        <Button label="0" click={this.addDigit} double />
+        <Button label="." click={this.addDigit} />
         <Button label="=" operation />
       </div>
     );
