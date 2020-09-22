@@ -13,7 +13,7 @@ interface ButtonProp {
 export default (props: ButtonProp) => {
   const { label, operation, double, click } = props;
 
-  let classes = 'button';
+  let classes = 'button ';
   classes += operation ? 'operation' : '';
   classes += double ? 'double' : '';
 
