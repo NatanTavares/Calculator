@@ -10,6 +10,10 @@ export default class Calculator extends Component {
     this.addDigit = this.addDigit.bind(this);
   }
 
+  clearMemory() {
+    console.log('Clear display');
+  }
+
   addDigit(digit: String) {
     console.log(digit);
   }
@@ -20,7 +24,7 @@ export default class Calculator extends Component {
         <Display value={100} />
         
         {/** Keyboard */}
-        <Button label="AC" />
+        <Button label="AC" click={this.clearMemory} />
         <Button label="±" />
         <Button label="%" />
         <Button label="÷" operation />
