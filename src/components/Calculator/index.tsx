@@ -9,6 +9,7 @@ export default class Calculator extends Component {
     super(props);
     this.addDigit = this.addDigit.bind(this);
     this.clearMemory = this.clearMemory.bind(this);
+    this.setOperation = this.setOperation.bind(this);
   }
 
   addDigit(digit: String) {
