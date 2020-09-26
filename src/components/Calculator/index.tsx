@@ -8,14 +8,15 @@ export default class Calculator extends Component {
   constructor(props: any) {
     super(props);
     this.addDigit = this.addDigit.bind(this);
-  }
-
-  clearMemory() {
-    console.log('Clear display');
+    this.clearMemory = this.clearMemory.bind(this);
   }
 
   addDigit(digit: String) {
     console.log(digit);
+  }
+
+  clearMemory() {
+    console.log('Clear display');
   }
 
   setOperation(operation: String) {
