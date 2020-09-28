@@ -4,7 +4,17 @@ import Button from "../Button";
 
 import "./styles.css";
 
+const initialState = {
+  displayValue: '0',
+  clearDisplay: false,
+  operation: null,
+  values: [0, 0],
+  current: 0,
+}
+
 export default class Calculator extends Component {
+  state = {...initialState }
+  
   constructor(props: any) {
     super(props);
     this.addDigit = this.addDigit.bind(this);
