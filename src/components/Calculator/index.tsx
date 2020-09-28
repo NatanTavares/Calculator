@@ -32,6 +32,17 @@ export default class Calculator extends Component {
     const displayValue = currentValue + digit;
 
     this.setState({ displayValue, clearDisplay: false });
+
+    if (digit !== '.') {
+      const index = this.state.current;
+      const newValue = parseFloat(displayValue);
+      const values = [...this.state.values];
+      
+      values[index] = newValue;
+      
+      this.setState({ values });
+      console.log('> Values:', values);
+    }
   }
 
   clearMemory() {
