@@ -13,7 +13,7 @@ const initialState = {
 }
 
 export default class Calculator extends Component {
-  state = {...initialState }
+  state = { ...initialState }
   
   constructor(props: any) {
     super(props);
@@ -27,7 +27,7 @@ export default class Calculator extends Component {
   }
 
   clearMemory() {
-    console.log('Clear display');
+    this.setState({ ...initialState });
   }
 
   setOperation(operation: String) {
