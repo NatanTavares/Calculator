@@ -22,8 +22,16 @@ export default class Calculator extends Component {
     this.setOperation = this.setOperation.bind(this);
   }
 
-  addDigit(digit: String) {
-    console.log(digit);
+  addDigit(digit: string) {
+    if (digit === '.' && this.state.displayValue.includes('.')) {
+      return
+    }
+
+    const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay;
+    const currentValue = clearDisplay ? '': this.state.displayValue;
+    const displayValue = currentValue + digit;
+
+    this.setState({ displayValue, clearDisplay: false });
   }
 
   clearMemory() {
