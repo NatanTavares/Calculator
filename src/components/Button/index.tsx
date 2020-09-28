@@ -3,11 +3,11 @@ import React from "react";
 import "./styles.css";
 
 interface ButtonProp {
-  label: String;
+  label: string;
   click?: Function;
 
-  operation?: Boolean;
-  double?: Boolean;
+  operation?: boolean;
+  double?: boolean;
 }
 
 export default (props: ButtonProp) => {

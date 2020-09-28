@@ -3,7 +3,7 @@ import React from "react";
 import "./styles.css";
 
 interface DisplayProp {
-  value?: String;
+  value?: string;
 }
 
 export default (props: DisplayProp) => {

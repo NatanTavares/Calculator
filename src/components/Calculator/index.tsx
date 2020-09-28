@@ -49,7 +49,7 @@ export default class Calculator extends Component {
     this.setState({ ...initialState });
   }
 
-  setOperation(operation: String) {
+  setOperation(operation: string) {
     console.log('> Operation:', operation);
   }
 
