@@ -60,10 +60,24 @@ export default class Calculator extends Component {
       const values = [...this.state.values];
 
       try {
-        values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`);
+        if (currentOperation != null) {
+          switch (currentOperation) {
+            case 'x':
+              values[0] = values[0] * values[1];
+              break;
+            case '÷':
+              values[0] = values[0] / values[1];
+              break;
+            case '%':
+              values[0] = values[0] * values[1] / 100;
+              break;
+            default:
+              values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`);
+              break;
+          }
+        }
       } catch(err) {
         values[0] = this.state.values[0];
-        console.error(err);
       }
 
       values[1] = 0;
