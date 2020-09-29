@@ -50,7 +50,9 @@ export default class Calculator extends Component {
   }
 
   setOperation(operation: string) {
-    console.log('> Operation:', operation);
+    if (this.state.current === 0) {
+      this.setState({ operation, current: 1, clearDisplay: true });
+    }
   }
 
   render() {
